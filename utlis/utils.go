@@ -55,7 +55,7 @@ func (Utils) StructUtils() StructUtils.StructUtils {
 	return utils
 }
 
-func (Utils) calculateUtils() CalculateUtils.CalculateUtils {
+func (Utils) CalculateUtils() CalculateUtils.CalculateUtils {
 	utils := CalculateUtils.CalculateUtils{}
 	return utils
 }
