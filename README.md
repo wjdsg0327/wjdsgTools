@@ -2,6 +2,10 @@
 
 go语言工具集
 
+
+
+
+
 ## stringUtils
 
 | 函数名 | 说明                       |
@@ -12,16 +16,16 @@ go语言工具集
 
 ## DateUtils
 
-| 函数名       | 说明                     |
-| ------------ | ------------------------ |
-| ParseYMDHMS  | 将数据转换为年月日时分秒 |
-| ParseYMD     | 将数据转换为年月日       |
-| BeginOfDay   | 获取指定日期的开始时间   |
-| EndOfDay     | 获取指定日期的结束时间   |
-| Offset       | 计算偏移后的日期时间     |
-| BeginOfMonth | 获取指定月开始时间       |
-| EndOfMonth   | 获取指定月结束时间       |
-|              |                          |
+| 函数名             | 说明                     |
+| ------------------ | ------------------------ |
+| ParseYMDHMS        | 将数据转换为年月日时分秒 |
+| ParseYMD           | 将数据转换为年月日       |
+| BeginOfDay         | 获取指定日期的开始时间   |
+| EndOfDay           | 获取指定日期的结束时间   |
+| Offset             | 计算偏移后的日期时间     |
+| BeginOfMonth       | 获取指定月开始时间       |
+| EndOfMonth         | 获取指定月结束时间       |
+| GetTwoTimeRangeDay | 计算两个时间之间的天数   |
 
 ## Md5Utils
 
@@ -49,4 +53,11 @@ go语言工具集
 | 函数名               | 说明       |
 | -------------------- | ---------- |
 | GenerateRandomString | 生成随机数 |
+
+## CalculateUtils
+
+| 函数名         | 说明                   |
+| -------------- | ---------------------- |
+| PercentageCode | 求两数的百分比(带符号) |
+| Percentage     | 求两数的百分比         |
 

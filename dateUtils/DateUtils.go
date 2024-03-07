@@ -34,9 +34,11 @@ func (DateUtils) EndOfDay(date time.Time) time.Time {
 }
 
 // Offset 计算偏移后的日期时间
-// @params date时间
-// @params DateField需要计算的类型
-// @params offset 未来时间就正整数，过去时间就负整数
+/**
+ *@params date时间
+ *@params DateField需要计算的类型
+ *@params offset 未来时间就正整数，过去时间就负整数
+ */
 func (DateUtils) Offset(date time.Time, field int, offset int) time.Time {
 
 	if field == 1 {
@@ -66,4 +68,10 @@ func (DateUtils) EndOfMonth(date time.Time) time.Time {
 
 	return nextMonth.Add(-time.Nanosecond)
 
+}
+
+// GetTwoTimeRangeDay 计算两个时间之间的天数
+func (DateUtils) GetTwoTimeRangeDay(t1 time.Time, t2 time.Time) int {
+	days := int(t2.Sub(t1).Hours() / 24)
+	return days
 }
