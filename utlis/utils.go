@@ -1,12 +1,12 @@
 package wjdsgtools
 
 import (
-	DateUtils "wjdsgtools/dateUtils"
-	IdUtils "wjdsgtools/idUtils"
-	Md5Utils "wjdsgtools/md5Utils"
-	RandomUtils "wjdsgtools/randomUtils"
-	StringUtils "wjdsgtools/stringUtils"
-	StructUtils "wjdsgtools/structUtils"
+	DateUtils "github.com/wjdsg0327/wjdsgtools/dateUtils"
+	IdUtils "github.com/wjdsg0327/wjdsgtools/idUtils"
+	Md5Utils "github.com/wjdsg0327/wjdsgtools/md5Utils"
+	RandomUtils "github.com/wjdsg0327/wjdsgtools/randomUtils"
+	StringUtils "github.com/wjdsg0327/wjdsgtools/stringUtils"
+	StructUtils "github.com/wjdsg0327/wjdsgtools/structUtils"
 )
 
 type Utils struct {

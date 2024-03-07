@@ -6,7 +6,7 @@ import (
 	"crypto/md5"
 	"encoding/base64"
 	"encoding/hex"
-	"wjdsgtools/randomUtils"
+	"github.com/wjdsg0327/wjdsgtools/randomUtils"
 )
 
 type Md5Utils struct {
