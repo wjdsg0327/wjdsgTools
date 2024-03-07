@@ -20,6 +20,7 @@ go语言工具集
 | ------------------ | ------------------------ |
 | ParseYMDHMS        | 将数据转换为年月日时分秒 |
 | ParseYMD           | 将数据转换为年月日       |
+| Format             | 字符串时间转time         |
 | BeginOfDay         | 获取指定日期的开始时间   |
 | EndOfDay           | 获取指定日期的结束时间   |
 | Offset             | 计算偏移后的日期时间     |
@@ -37,9 +38,12 @@ go语言工具集
 
 ## StructUtils
 
-| 函数名         | 说明       |
-| -------------- | ---------- |
-| CopyProperties | 结构体转换 |
+| 函数名             | 说明                             |
+| ------------------ | -------------------------------- |
+| CopyProperties     | 结构体转换                       |
+| GetStructInfoList  | 获取结构体所有信息               |
+| GetStructFieldList | 获取结构体所有字段               |
+| GetStructFieldInfo | 根据结构体字段名字获取字段的详细 |
 
 ## IdUtils
 

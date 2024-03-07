@@ -68,7 +68,6 @@ func (DateUtils) EndOfDay(date time.Time) time.Time {
 func (DateUtils) Offset(date time.Time, field int, offset int) time.Time {
 
 	if field == 1 {
-		// 计算去年的时间
 		return date.AddDate(offset, 0, 0)
 	} else if field == 2 {
 		return date.AddDate(0, offset, 0)
@@ -100,4 +99,25 @@ func (DateUtils) EndOfMonth(date time.Time) time.Time {
 func (DateUtils) GetTwoTimeRangeDay(t1 time.Time, t2 time.Time) int {
 	days := int(t2.Sub(t1).Hours() / 24)
 	return days
+}
+
+// GetBetweenDate 获取两个日期之间的所有日期，格式：yyyy-MM-dd
+func (DateUtils) GetBetweenDate(start, end string) []string {
+	var list []string
+
+	// 时间格式为 yyyy-MM-dd
+	startDate, _ := time.Parse("2006-01-02", start)
+	endDate, _ := time.Parse("2006-01-02", end)
+
+	distance := endDate.Sub(startDate).Hours() / 24
+	if distance < 1 {
+		list = append(list, start)
+		return list
+	}
+
+	for d := startDate; d.Before(endDate.Add(24 * time.Hour)); d = d.Add(24 * time.Hour) {
+		list = append(list, d.Format("2006-01-02"))
+	}
+
+	return list
 }

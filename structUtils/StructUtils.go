@@ -10,9 +10,11 @@ type StructUtils struct {
 }
 
 // CopyProperties 结构体转换
-// target：需要转换的目标
-// source: 数据源
-// 注意：必须传结构体指针&
+/**
+* @params target：需要转换的目标
+* @params source: 数据源
+* 注意：必须传结构体指针&
+ */
 func (StructUtils) CopyProperties(target, source interface{}) (err error) {
 	// 防止意外panic
 	defer func() {
@@ -60,4 +62,65 @@ func (StructUtils) CopyProperties(target, source interface{}) (err error) {
 	}
 
 	return nil
+}
+
+// GetStructInfoList 获取结构体所有信息
+/**
+* @params structValue：结构体
+ */
+func (StructUtils) GetStructInfoList(structValue interface{}) []reflect.StructField {
+
+	structType := reflect.TypeOf(structValue)
+
+	b := structType.Kind() == reflect.Struct
+	if !b {
+		panic("传值不是一个结构体")
+	}
+	var list []reflect.StructField
+	for i := 0; i < structType.NumField(); i++ {
+		list = append(list, structType.Field(i))
+	}
+
+	return list
+}
+
+// GetStructFieldList 获取结构体所有字段
+/**
+* @params structValue：结构体
+ */
+func (StructUtils) GetStructFieldList(structValue interface{}) []string {
+
+	structType := reflect.TypeOf(structValue)
+
+	b := structType.Kind() == reflect.Struct
+	if !b {
+		panic("传值不是一个结构体")
+	}
+	var list []string
+	//遍历结构体的字段
+	for i := 0; i < structType.NumField(); i++ {
+		field := structType.Field(i)
+
+		list = append(list, field.Name)
+	}
+	return list
+}
+
+// GetStructFieldInfo 根据结构体字段名字获取字段的详细
+/**
+ * @params structValue：结构体
+ * @params field 字段名字
+ */
+func (StructUtils) GetStructFieldInfo(structValue interface{}, fieldName string) reflect.StructField {
+	structType := reflect.TypeOf(structValue)
+
+	b := structType.Kind() == reflect.Struct
+	if !b {
+		panic("传值不是一个结构体")
+	}
+	value, b2 := structType.FieldByName(fieldName)
+	if !b2 {
+		panic("没有此字段")
+	}
+	return value
 }
