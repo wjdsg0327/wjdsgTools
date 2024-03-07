@@ -1,6 +1,7 @@
 package DateUtils
 
 import (
+	"fmt"
 	"time"
 )
 
@@ -8,16 +9,41 @@ type DateUtils struct {
 }
 
 // ParseYMDHMS 将数据转换为年月日时分秒
-func (DateUtils) ParseYMDHMS(date time.Time) string {
+/**
+* @params date：时间
+ *@params format：格式 2006-01-02 15:04:05
+*/
+func (DateUtils) ParseYMDHMS(date time.Time, format string) string {
 
-	return date.Format("2006-01-02 15:04:05")
+	return date.Format(format)
 
 }
 
 // ParseYMD 将数据转换为年月日
-func (DateUtils) ParseYMD(date time.Time) string {
+/**
+ *@params date:时间
+ *@params format：格式 2006-01-02 15:04:05
+ */
+func (DateUtils) ParseYMD(date time.Time, format string) string {
 
-	return date.Format("2006-01-02")
+	return date.Format(format)
+
+}
+
+// Format 字符串时间转time
+/**
+ *@params dateTimeStr:时间
+ *@params format：格式 2006-01-02 15:04:05
+ */
+func (DateUtils) Format(dateTimeStr string, format string) time.Time {
+
+	dateTime, err := time.Parse(format, dateTimeStr)
+
+	if err != nil {
+		fmt.Println("转换失败:", err)
+		panic("转换失败")
+	}
+	return dateTime
 
 }
 

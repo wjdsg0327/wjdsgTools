@@ -12,3 +12,11 @@ func (DateField) MOUTH() int {
 func (DateField) DAY() int {
 	return 2
 }
+
+func (DateField) FormatYMDHMS() string {
+	return "2006-01-02 15:04:05"
+}
+
+func (DateField) FormatYMD() string {
+	return "2006-01-02"
+}
