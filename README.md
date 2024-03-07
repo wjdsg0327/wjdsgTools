@@ -2,6 +2,22 @@
 
 go语言工具集
 
+使用教程
+
+```
+go get github.com/wjdsg0327/wjdsgTools
+```
+
+```go
+func main() {
+
+	id := wjdsgtools.Utils{}.IdUtils().GetId()
+
+	fmt.Println(id)
+
+}
+```
+
 
 
 
