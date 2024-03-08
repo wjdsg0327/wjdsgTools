@@ -51,6 +51,7 @@ func main() {
 | LastMonth      | 获取上个月的日期                             |
 | NextMonth      | 获取下个月的日期                             |
 | GetZodiac      | 根据月日计算星座                             |
+| AgeOfNow       | 计算年龄                                     |
 
 ## Md5Utils
 

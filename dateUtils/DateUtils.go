@@ -260,3 +260,24 @@ func (DateUtils) GetZodiac(mouth time.Month, day int) string {
 		return "未知星座"
 	}
 }
+
+// AgeOfNow 计算年龄
+func (DateUtils) AgeOfNow(birthdate string) int {
+	layout := "2006-01-02"
+	birthday, err := time.Parse(layout, birthdate)
+
+	if err != nil {
+		fmt.Println("日期解析错误，需要格式是：yyyy-MM-dd:", err)
+		return 0
+	}
+
+	now := time.Now()
+	age := now.Year() - birthday.Year()
+
+	// 如果生日还未过，年龄减1
+	if now.YearDay() < birthday.YearDay() {
+		age--
+	}
+
+	return age
+}
