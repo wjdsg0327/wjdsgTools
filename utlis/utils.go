@@ -1,6 +1,7 @@
 package wjdsgtools
 
 import (
+	FileUtils "github.com/wjdsg0327/wjdsgtools/FileUtils"
 	CalculateUtils "github.com/wjdsg0327/wjdsgtools/calculateUtils"
 	DateUtils "github.com/wjdsg0327/wjdsgtools/dateUtils"
 	IdUtils "github.com/wjdsg0327/wjdsgtools/idUtils"
@@ -11,11 +12,6 @@ import (
 )
 
 type Utils struct {
-}
-
-func DateField() DateUtils.DateField {
-	field := DateUtils.DateField{}
-	return field
 }
 
 // DateUtils 日期处理
@@ -55,7 +51,13 @@ func (Utils) StructUtils() StructUtils.StructUtils {
 	return utils
 }
 
+// CalculateUtils 计算操作
 func (Utils) CalculateUtils() CalculateUtils.CalculateUtils {
 	utils := CalculateUtils.CalculateUtils{}
+	return utils
+}
+
+func (Utils) FileUtils() FileUtils.FileUtils {
+	utils := FileUtils.FileUtils{}
 	return utils
 }
