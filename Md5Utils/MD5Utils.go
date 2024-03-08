@@ -6,7 +6,7 @@ import (
 	"crypto/md5"
 	"encoding/base64"
 	"encoding/hex"
-	"github.com/wjdsg0327/wjdsgtools/randomUtils"
+	"github.com/wjdsg0327/wjdsgtools/RandomUtils"
 )
 
 type Md5Utils struct {
@@ -31,7 +31,7 @@ var commonIV = []byte{0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09
 // 返回值：加密之后内容，密钥
 func (Md5Utils) Encrypt(text string) (string, string, error) {
 
-	randomString := randomUtils.RandomUtils{}.GenerateRandomString(true, true, false, true, 32)
+	randomString := RandomUtils.RandomUtils{}.GenerateRandomString(true, true, false, true, 32)
 
 	key := []byte(randomString)
 	c, err := aes.NewCipher(key)
