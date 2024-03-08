@@ -52,6 +52,7 @@ func main() {
 | NextMonth      | 获取下个月的日期                             |
 | GetZodiac      | 根据月日计算星座                             |
 | AgeOfNow       | 计算年龄                                     |
+| IsLeapYear     | 是否闰年                                     |
 
 ## Md5Utils
 

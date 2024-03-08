@@ -281,3 +281,9 @@ func (DateUtils) AgeOfNow(birthdate string) int {
 
 	return age
 }
+
+// IsLeapYear 是否闰年
+func (DateUtils) IsLeapYear(year int) bool {
+	// 能被4整除且不能被100整除，或者能被400整除的年份是闰年
+	return (year%4 == 0 && year%100 != 0) || (year%400 == 0)
+}
