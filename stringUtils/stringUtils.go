@@ -1,6 +1,7 @@
 package stringUtils
 
 import (
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"strings"
@@ -35,11 +36,33 @@ func (StringUtils) StringToJson(jsonValue string, dst interface{}) interface{} {
 /**
  * @params data ：json数据
  */
-func JsonToSting(data interface{}) string {
+func (StringUtils) JsonToSting(data interface{}) string {
 
 	jsonBytes, err := json.Marshal(data)
 	if err != nil {
 		panic(fmt.Sprintf("Json转String错误：%s", err))
 	}
 	return string(jsonBytes)
+}
+
+// EncodeHexStr 字符串转hex
+func (StringUtils) EncodeHexStr(s string) string {
+
+	inputBytes := []byte(s)
+
+	// 使用hex包进行编码
+	hexString := hex.EncodeToString(inputBytes)
+
+	return hexString
+}
+
+// DecodeHexStr hex转字符串
+func (StringUtils) DecodeHexStr(s string) string {
+
+	// 使用hex包进行编码
+	decodeString, err := hex.DecodeString(s)
+	if err != nil {
+		panic(fmt.Sprintf("解析失败：%s", err))
+	}
+	return string(decodeString)
 }

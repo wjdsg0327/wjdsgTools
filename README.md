@@ -29,6 +29,8 @@ func main() {
 | Split        | 根据指定分割符，分割字符串  |
 | StringToJson | 字符串转json：map或者结构体 |
 | JsonToSting  | json转字符串                |
+| EncodeHexStr | 字符串转hex                 |
+| DecodeHexStr | hex转字符串                 |
 
 ## DateUtils
 
