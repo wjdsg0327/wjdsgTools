@@ -1,14 +1,14 @@
 package wjdsgtools
 
 import (
+	"github.com/wjdsg0327/wjdsgtools/CalculateUtils"
 	"github.com/wjdsg0327/wjdsgtools/DateUtils"
 	"github.com/wjdsg0327/wjdsgtools/FileUtils"
 	"github.com/wjdsg0327/wjdsgtools/IdUtils"
-	"wjdsgtools/CalculateUtils"
-	"wjdsgtools/Md5Utils"
-	"wjdsgtools/RandomUtils"
-	"wjdsgtools/StringUtils"
-	"wjdsgtools/StructUtils"
+	"github.com/wjdsg0327/wjdsgtools/Md5Utils"
+	"github.com/wjdsg0327/wjdsgtools/RandomUtils"
+	"github.com/wjdsg0327/wjdsgtools/StringUtils"
+	"github.com/wjdsg0327/wjdsgtools/StructUtils"
 )
 
 type Utils struct {
