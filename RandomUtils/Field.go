@@ -1,4 +1,4 @@
-package randomUtils
+package RandomUtils
 
 func capital() string {
 	return "ABCDEFGHIJKLMNOPQRSTUVWXYZ"

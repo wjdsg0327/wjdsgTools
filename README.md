@@ -93,3 +93,10 @@ func main() {
 | PercentageCode | 求两数的百分比(带符号) |
 | Percentage     | 求两数的百分比         |
 
+## FileUtils
+
+| 函数名 | 说明         |
+| ------ | ------------ |
+| Copy   | 文件拷贝     |
+| Read   | 读取文件内容 |
+

@@ -1,4 +1,4 @@
-package stringUtils
+package StringUtils
 
 import (
 	"encoding/hex"

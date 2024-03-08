@@ -1,14 +1,14 @@
 package wjdsgtools
 
 import (
-	FileUtils "github.com/wjdsg0327/wjdsgtools/FileUtils"
-	CalculateUtils "github.com/wjdsg0327/wjdsgtools/calculateUtils"
-	DateUtils "github.com/wjdsg0327/wjdsgtools/dateUtils"
-	IdUtils "github.com/wjdsg0327/wjdsgtools/idUtils"
-	Md5Utils "github.com/wjdsg0327/wjdsgtools/md5Utils"
-	RandomUtils "github.com/wjdsg0327/wjdsgtools/randomUtils"
-	StringUtils "github.com/wjdsg0327/wjdsgtools/stringUtils"
-	StructUtils "github.com/wjdsg0327/wjdsgtools/structUtils"
+	"github.com/wjdsg0327/wjdsgtools/DateUtils"
+	"github.com/wjdsg0327/wjdsgtools/FileUtils"
+	"github.com/wjdsg0327/wjdsgtools/IdUtils"
+	"wjdsgtools/CalculateUtils"
+	"wjdsgtools/Md5Utils"
+	"wjdsgtools/RandomUtils"
+	"wjdsgtools/StringUtils"
+	"wjdsgtools/StructUtils"
 )
 
 type Utils struct {
@@ -57,6 +57,7 @@ func (Utils) CalculateUtils() CalculateUtils.CalculateUtils {
 	return utils
 }
 
+// FileUtils 文件操作
 func (Utils) FileUtils() FileUtils.FileUtils {
 	utils := FileUtils.FileUtils{}
 	return utils

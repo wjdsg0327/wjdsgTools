@@ -1,4 +1,4 @@
-package calculateUtils
+package CalculateUtils
 
 import (
 	"fmt"

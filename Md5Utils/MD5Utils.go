@@ -1,4 +1,4 @@
-package md5Utils
+package Md5Utils
 
 import (
 	"crypto/aes"
