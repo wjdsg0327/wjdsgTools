@@ -32,17 +32,24 @@ func main() {
 
 ## DateUtils
 
-| 函数名             | 说明                     |
-| ------------------ | ------------------------ |
-| ParseYMDHMS        | 将数据转换为年月日时分秒 |
-| ParseYMD           | 将数据转换为年月日       |
-| Format             | 字符串时间转time         |
-| BeginOfDay         | 获取指定日期的开始时间   |
-| EndOfDay           | 获取指定日期的结束时间   |
-| Offset             | 计算偏移后的日期时间     |
-| BeginOfMonth       | 获取指定月开始时间       |
-| EndOfMonth         | 获取指定月结束时间       |
-| GetTwoTimeRangeDay | 计算两个时间之间的天数   |
+| 函数名         | 说明                                         |
+| -------------- | -------------------------------------------- |
+| ParseYMDHMS    | 将数据转换为年月日时分秒                     |
+| ParseYMD       | 将数据转换为年月日                           |
+| Format         | 字符串时间转time                             |
+| BeginOfDay     | 获取指定日期的开始时间                       |
+| EndOfDay       | 获取指定日期的结束时间                       |
+| Offset         | 计算偏移后的日期时间                         |
+| BeginOfMonth   | 获取指定月开始时间                           |
+| EndOfMonth     | 获取指定月结束时间                           |
+| Between        | 计算两个时间之间的年月日                     |
+| GetBetweenDate | 获取两个日期之间的所有日期，格式：yyyy-MM-dd |
+| Yesterday      | 获取昨天的日期                               |
+| Tomorrow       | 获取昨天的日期                               |
+| LastWeek       | 获取上周的日期                               |
+| NextWeek       | 获取下周的日期                               |
+| LastMonth      | 获取上个月的日期                             |
+| NextMonth      | 获取下个月的日期                             |
 
 ## Md5Utils
 

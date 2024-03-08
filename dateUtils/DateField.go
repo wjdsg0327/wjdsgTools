@@ -10,7 +10,7 @@ func (DateField) MOUTH() int {
 	return 2
 }
 func (DateField) DAY() int {
-	return 2
+	return 3
 }
 
 func (DateField) FormatYMDHMS() string {
