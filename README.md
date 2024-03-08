@@ -50,6 +50,7 @@ func main() {
 | NextWeek       | 获取下周的日期                               |
 | LastMonth      | 获取上个月的日期                             |
 | NextMonth      | 获取下个月的日期                             |
+| GetZodiac      | 根据月日计算星座                             |
 
 ## Md5Utils
 

@@ -97,7 +97,7 @@ func (DateUtils) EndOfMonth(date time.Time) time.Time {
 }
 
 // Between 计算两个时间之间的年月日
-func (DateUtils) Between(t1 time.Time, t2 time.Time, DateField int) int {
+func (DateUtils) Between(t1 time.Time, t2 time.Time, DateField YMD) int {
 	//days := int(t2.Sub(t1).Hours() / 24)
 	duration := t2.Sub(t1)
 	var date int
@@ -190,4 +190,73 @@ func (DateUtils) NextMonth() time.Time {
 	date := time.Now()
 	t := time.Date(date.Year(), date.Month()+1, date.Day(), date.Hour(), date.Minute(), date.Second(), date.Nanosecond(), date.Location())
 	return t
+}
+
+// GetZodiac 根据月日计算星座
+func (DateUtils) GetZodiac(mouth time.Month, day int) string {
+
+	switch mouth {
+	case 1:
+		if day >= 20 {
+			return "水瓶座"
+		}
+		return "摩羯座"
+	case 2:
+		if day >= 19 {
+			return "双鱼座"
+		}
+		return "水瓶座"
+	case 3:
+		if day >= 21 {
+			return "白羊座"
+		}
+		return "双鱼座"
+	case 4:
+		if day >= 20 {
+			return "金牛座"
+		}
+		return "白羊座"
+	case 5:
+		if day >= 21 {
+			return "双子座"
+		}
+		return "金牛座"
+	case 6:
+		if day >= 21 {
+			return "巨蟹座"
+		}
+		return "双子座"
+	case 7:
+		if day >= 23 {
+			return "狮子座"
+		}
+		return "巨蟹座"
+	case 8:
+		if day >= 23 {
+			return "处女座"
+		}
+		return "狮子座"
+	case 9:
+		if day >= 23 {
+			return "天秤座"
+		}
+		return "处女座"
+	case 10:
+		if day >= 23 {
+			return "天蝎座"
+		}
+		return "天秤座"
+	case 11:
+		if day >= 22 {
+			return "射手座"
+		}
+		return "天蝎座"
+	case 12:
+		if day >= 22 {
+			return "摩羯座"
+		}
+		return "射手座"
+	default:
+		return "未知星座"
+	}
 }
