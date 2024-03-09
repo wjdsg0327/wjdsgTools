@@ -21,3 +21,6 @@
 go.work
 
 .idea
+go.mod
+go.sum
+main.go
