@@ -124,20 +124,16 @@ func (IdCardUtils) IdCardGetAREA(card string) string {
 
 // IdCardSEX 根据身份证获取性别
 func (IdCardUtils) IdCardSEX(card string) string {
-
 	card18 := IdCardUtils{}.IsValidCard18(card)
 	if !card18 {
 		panic("身份证不合法")
 	}
-
 	s := card[16:17]
-
 	code, _ := strconv.Atoi(s)
 	i := code % 2
 	if i == 0 {
 		return "女"
 	}
-
 	return "男"
 
 }

@@ -5,10 +5,12 @@ import (
 	"github.com/wjdsg0327/wjdsgtools/DateUtils"
 	"github.com/wjdsg0327/wjdsgtools/FileUtils"
 	"github.com/wjdsg0327/wjdsgtools/IdUtils"
-	"github.com/wjdsg0327/wjdsgtools/Md5Utils"
 	"github.com/wjdsg0327/wjdsgtools/RandomUtils"
 	"github.com/wjdsg0327/wjdsgtools/StringUtils"
 	"github.com/wjdsg0327/wjdsgtools/StructUtils"
+	"wjdsgtools/IdCardUtils"
+	"wjdsgtools/InterfaceUtils"
+	"wjdsgtools/SecureUtils"
 )
 
 type Utils struct {
@@ -32,10 +34,9 @@ func (Utils) RandomUtils() RandomUtils.RandomUtils {
 	return utils
 }
 
-// Md5Utils 加处理
-func (Utils) Md5Utils() Md5Utils.Md5Utils {
-
-	utils := Md5Utils.Md5Utils{}
+// SecureUtil 加处理
+func (Utils) SecureUtil() SecureUtils.SecureUtils {
+	utils := SecureUtils.SecureUtils{}
 	return utils
 }
 
@@ -60,5 +61,17 @@ func (Utils) CalculateUtils() CalculateUtils.CalculateUtils {
 // FileUtils 文件操作
 func (Utils) FileUtils() FileUtils.FileUtils {
 	utils := FileUtils.FileUtils{}
+	return utils
+}
+
+// InterfaceUtils 接口类型处理
+func (Utils) InterfaceUtils() InterfaceUtils.InterfaceUtils {
+	utils := InterfaceUtils.InterfaceUtils{}
+	return utils
+}
+
+// IdCardUtils 身份证处理
+func (Utils) IdCardUtils() IdCardUtils.IdCardUtils {
+	utils := IdCardUtils.IdCardUtils{}
 	return utils
 }

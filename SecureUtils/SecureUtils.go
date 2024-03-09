@@ -1,4 +1,4 @@
-package Md5Utils
+package SecureUtils
 
 import (
 	"crypto/aes"
@@ -6,10 +6,12 @@ import (
 	"crypto/md5"
 	"encoding/base64"
 	"encoding/hex"
+	"errors"
+	"fmt"
 	"github.com/wjdsg0327/wjdsgtools/RandomUtils"
 )
 
-type Md5Utils struct {
+type SecureUtils struct {
 }
 
 // 参数：需要加密的字符串
@@ -20,21 +22,32 @@ func getMd5(str string) string {
 }
 
 // Md5 md5加密（无法解密）
-func (Md5Utils) Md5(str string, salt string) string {
+func (SecureUtils) Md5(str string, salt string) string {
 	return getMd5(getMd5(str + salt))
 }
 
 var commonIV = []byte{0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f}
 
 // Encrypt 加密
-// 参数1 text:需要加密的数据
-// 返回值：加密之后内容，密钥
-func (Md5Utils) Encrypt(text string) (string, string, error) {
+/**
+ * @params text:需要加密的数据
+ * @params key :自定义加密密钥，如果不需要自定义，则传空字符串，系统自动生成密码并且返回
+ * 注意：自定义密钥必须等于32比特
+ * return：加密之后内容，密钥
+ */
+func (SecureUtils) Encrypt(text string, key string) (string, string, error) {
 
-	randomString := RandomUtils.RandomUtils{}.GenerateRandomString(true, true, false, true, 32)
+	var code []byte
+	if key == "" {
+		randomString := RandomUtils.RandomUtils{}.GenerateRandomString(true, true, false, true, 32)
+		code = []byte(randomString)
+	} else if len(key) != 32 {
+		return "", "", errors.New(fmt.Sprintf("密码长度不够，需要长度32，您的长度：%d", len(key)))
 
-	key := []byte(randomString)
-	c, err := aes.NewCipher(key)
+	} else {
+		code = []byte(key)
+	}
+	c, err := aes.NewCipher(code)
 	if err != nil {
 		return "", "", err
 	}
@@ -42,13 +55,13 @@ func (Md5Utils) Encrypt(text string) (string, string, error) {
 	ciphertext := make([]byte, len(text))
 	cfb.XORKeyStream(ciphertext, []byte(text))
 
-	return base64.StdEncoding.EncodeToString(ciphertext), string(key), nil
+	return base64.StdEncoding.EncodeToString(ciphertext), string(code), nil
 }
 
 // Decrypt 解密函数
 // 参数：ciphertext加密之后的内容，key密码
 // 返回值：解密内容
-func (Md5Utils) Decrypt(ciphertext string, key string) (string, error) {
+func (SecureUtils) Decrypt(ciphertext string, key string) (string, error) {
 
 	byteSlice := []byte(key)
 
