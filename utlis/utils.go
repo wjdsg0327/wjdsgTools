@@ -3,6 +3,7 @@ package wjdsgtools
 import (
 	"github.com/wjdsg0327/wjdsgTools/IdCardUtils"
 	"github.com/wjdsg0327/wjdsgTools/InterfaceUtils"
+	"github.com/wjdsg0327/wjdsgTools/SecureUtils"
 	"github.com/wjdsg0327/wjdsgtools/CalculateUtils"
 	"github.com/wjdsg0327/wjdsgtools/DateUtils"
 	"github.com/wjdsg0327/wjdsgtools/FileUtils"
@@ -10,7 +11,6 @@ import (
 	"github.com/wjdsg0327/wjdsgtools/RandomUtils"
 	"github.com/wjdsg0327/wjdsgtools/StringUtils"
 	"github.com/wjdsg0327/wjdsgtools/StructUtils"
-	"wjdsgtools/SecureUtils"
 )
 
 type Utils struct {
