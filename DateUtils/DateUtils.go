@@ -267,8 +267,7 @@ func (DateUtils) AgeOfNow(birthdate string) int {
 	birthday, err := time.Parse(layout, birthdate)
 
 	if err != nil {
-		fmt.Println("日期解析错误，需要格式是：yyyy-MM-dd:", err)
-		return 0
+		panic(fmt.Sprintf("日期解析错误，需要格式是：yyyy-MM-dd:%s", err))
 	}
 
 	now := time.Now()
