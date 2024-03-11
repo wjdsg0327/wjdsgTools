@@ -64,21 +64,30 @@ func (StructUtils) CopyProperties(target, source interface{}) (err error) {
 	return nil
 }
 
+type StructInfo struct {
+	StructField reflect.StructField
+	Value       interface{}
+}
+
 // GetStructInfoList 获取结构体所有信息
 /**
 * @params structValue：结构体
  */
-func (StructUtils) GetStructInfoList(structValue interface{}) []reflect.StructField {
+func GetStructInfoList(structData interface{}) []StructInfo {
 
-	structType := reflect.TypeOf(structValue)
+	structValue := reflect.ValueOf(structData)
 
-	b := structType.Kind() == reflect.Struct
+	b := structValue.Kind() == reflect.Struct
 	if !b {
 		panic("传值不是一个结构体")
 	}
-	var list []reflect.StructField
-	for i := 0; i < structType.NumField(); i++ {
-		list = append(list, structType.Field(i))
+	var list []StructInfo
+	for i := 0; i < structValue.NumField(); i++ {
+		var structInfo StructInfo
+		structInfo.StructField = structValue.Type().Field(i)
+		structInfo.Value = structValue.Field(i)
+
+		list = append(list, structInfo)
 	}
 
 	return list
