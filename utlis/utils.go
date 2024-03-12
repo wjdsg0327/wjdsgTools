@@ -11,6 +11,7 @@ import (
 	"github.com/wjdsg0327/wjdsgtools/SecureUtils"
 	"github.com/wjdsg0327/wjdsgtools/StringUtils"
 	"github.com/wjdsg0327/wjdsgtools/StructUtils"
+	"wjdsgtools/DesensitizedUtils"
 )
 
 type Utils struct {
@@ -73,5 +74,11 @@ func (Utils) InterfaceUtils() InterfaceUtils.InterfaceUtils {
 // IdCardUtils 身份证处理
 func (Utils) IdCardUtils() IdCardUtils.IdCardUtils {
 	utils := IdCardUtils.IdCardUtils{}
+	return utils
+}
+
+// DesensitizedUtils 信息脱敏
+func (Utils) DesensitizedUtils() DesensitizedUtils.DesensitizedUtils {
+	utils := DesensitizedUtils.DesensitizedUtils{}
 	return utils
 }

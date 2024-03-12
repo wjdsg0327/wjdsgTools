@@ -22,7 +22,7 @@ func main() {
 
 
 
-## stringUtils
+## stringUtils字符串相关
 
 | 函数名       | 说明                        |
 | ------------ | --------------------------- |
@@ -32,7 +32,7 @@ func main() {
 | EncodeHexStr | 字符串转hex                 |
 | DecodeHexStr | hex转字符串                 |
 
-## DateUtils
+## DateUtils日期相关
 
 | 函数名         | 说明                                         |
 | -------------- | -------------------------------------------- |
@@ -56,7 +56,7 @@ func main() {
 | AgeOfNow       | 计算年龄                                     |
 | IsLeapYear     | 是否闰年                                     |
 
-## Md5Utils
+## SecureUtils加密相关
 
 | 函数名  | 说明                |
 | ------- | ------------------- |
@@ -64,7 +64,7 @@ func main() {
 | Encrypt | 加密                |
 | Decrypt | 解密                |
 
-## StructUtils
+## StructUtils结构体相关
 
 | 函数名             | 说明                             |
 | ------------------ | -------------------------------- |
@@ -73,41 +73,41 @@ func main() {
 | GetStructFieldList | 获取结构体所有字段               |
 | GetStructFieldInfo | 根据结构体字段名字获取字段的详细 |
 
-## IdUtils
+## IdUtils  id生成
 
 | 函数名         | 说明                            |
 | -------------- | ------------------------------- |
 | GetId          | 根据时间戳生成id                |
 | GetSnowflakeId | 雪花算法（Snowflake）的 ID 生成 |
 
-## RandomUtils
+## RandomUtils 随机数
 
 | 函数名               | 说明       |
 | -------------------- | ---------- |
 | GenerateRandomString | 生成随机数 |
 
-## CalculateUtils
+## CalculateUtils 计算相关
 
 | 函数名         | 说明                   |
 | -------------- | ---------------------- |
 | PercentageCode | 求两数的百分比(带符号) |
 | Percentage     | 求两数的百分比         |
 
-## FileUtils
+## FileUtils 文件相关
 
 | 函数名 | 说明         |
 | ------ | ------------ |
 | Copy   | 文件拷贝     |
 | Read   | 读取文件内容 |
 
-## InterfaceUtils
+## InterfaceUtils 接口类型相关
 
 | 函数名  | 说明                             |
 | ------- | -------------------------------- |
 | GetType | 获取接口实际类型                 |
 | IsType  | 检查接口的类型是否为某个特定类型 |
 
-## IdCardUtils
+## IdCardUtils 身份证相关
 
 | 函数名        | 说明                                                |
 | ------------- | --------------------------------------------------- |
@@ -115,4 +115,16 @@ func main() {
 | IdCardGetAge  | 根据身份证计算年龄                                  |
 | IdCardGetAREA | 根据身份证获取所属省份                              |
 | IdCardSEX     | 根据身份证获取性别                                  |
+
+## DesensitizedUtils 信息脱敏相关
+
+| 函数名           | 说明       |
+| ---------------- | ---------- |
+| ChineseName      | 中文名称   |
+| Email            | 电子邮件   |
+| MobilePhone      | 手机号     |
+| IdCard           | 身份证     |
+| Address          | 地址       |
+| PossWord         | 密码       |
+| SecureStructList | 结构体脱敏 |
 
