@@ -73,7 +73,7 @@ type StructInfo struct {
 /**
 * @params structValue：结构体
  */
-func GetStructInfoList(structData interface{}) []StructInfo {
+func (StructUtils) GetStructInfoList(structData interface{}) []StructInfo {
 
 	structValue := reflect.ValueOf(structData)
 
