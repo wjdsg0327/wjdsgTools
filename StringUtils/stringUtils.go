@@ -4,17 +4,29 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
+	"github.com/mozillazg/go-pinyin"
 	"strings"
 )
 
 type StringUtils struct {
 }
 
-// Split 根据指定分割符，分割字符串
-func (StringUtils) Split(content string, code string) []string {
+func (StringUtils) ChinaToPinYin(s string) string {
 
-	return strings.Split(content, code)
+	a := pinyin.LazyConvert(s, nil)
 
+	var test string
+
+	for _, name := range a {
+
+		one := name[0:1]
+		upper := strings.ToUpper(one)
+		end := name[1:len(name)]
+		name = upper + end
+		test = test + name
+	}
+
+	return test
 }
 
 // StringToJson 字符串转json：map或者结构体
