@@ -4,29 +4,9 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
-	"github.com/mozillazg/go-pinyin"
-	"strings"
 )
 
 type StringUtils struct {
-}
-
-func (StringUtils) ChinaToPinYin(s string) string {
-
-	a := pinyin.LazyConvert(s, nil)
-
-	var test string
-
-	for _, name := range a {
-
-		one := name[0:1]
-		upper := strings.ToUpper(one)
-		end := name[1:len(name)]
-		name = upper + end
-		test = test + name
-	}
-
-	return test
 }
 
 // StringToJson 字符串转json：map或者结构体
