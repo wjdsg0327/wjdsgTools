@@ -26,7 +26,6 @@ func main() {
 
 | 函数名       | 说明                        |
 | ------------ | --------------------------- |
-| Split        | 根据指定分割符，分割字符串  |
 | StringToJson | 字符串转json：map或者结构体 |
 | JsonToSting  | json转字符串                |
 | EncodeHexStr | 字符串转hex                 |
