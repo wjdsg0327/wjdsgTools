@@ -14,7 +14,7 @@ type StringUtils struct {
  * @params jsonValue ：json字符串数据
  * @params dst ：接收数据的载体，最好是map或者结构体
  */
-func (StringUtils) StringToJson(jsonValue string, dst *interface{}) {
+func (StringUtils) StringToJson(jsonValue string, dst interface{}) {
 
 	err := json.Unmarshal([]byte(jsonValue), dst)
 	if err != nil {
